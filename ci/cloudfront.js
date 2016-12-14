@@ -37,7 +37,6 @@
   var invalidate = function(env, callback) {
   
     var config = require('./config')(env);
-    console.log("JSON: " + JSON.stringify(config))
     createInvalidation(config.credentials, config.distribution_id, config.invalidationPath, function(err, data) {
     	if(typeof callback == 'function') callback(false);
     });

@@ -16,7 +16,7 @@ module.exports = function(env) {
       }, base)
       break;
     case "prod":
-      _.extend({
+      return _.extend({
         distribution_id: "E28VQE9ZA4MDHF",
         invalidationPath: "/*"
       }, base)
