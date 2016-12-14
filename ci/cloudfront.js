@@ -40,7 +40,7 @@
     var cfConfig = config.cloudfront[env];
 
     createInvalidation(cfConfig.credentials, cfConfig.distribution_id, cfConfig.invalidationPath, function(err, data) {
-    	callback(false);
+    	if(typeof callback == 'function') callback(false);
     });
   };
 
