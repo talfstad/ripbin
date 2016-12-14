@@ -2,6 +2,9 @@
   "name": "ajax-ripbin",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "test": ""
+  },
   "devDependencies": {
     "underscore": "*",
     "aws-sdk": "*",
