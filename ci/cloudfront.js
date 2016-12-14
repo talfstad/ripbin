@@ -1,5 +1,4 @@
   var AWS = require('aws-sdk');
-  var config = require('./config');
   var uuid = require('uuid');
   
   var createInvalidation = function(credentials, distribution_id, invalidationPath, callback) {
@@ -32,14 +31,14 @@
         callback(false, data);
       }
     });
-
   };
 
 
   var invalidate = function(env, callback) {
-    var cfConfig = config.cloudfront[env];
-
-    createInvalidation(cfConfig.credentials, cfConfig.distribution_id, cfConfig.invalidationPath, function(err, data) {
+  
+    var config = require('./config')(env);
+    console.log("JSON: " + JSON.stringify(config))
+    createInvalidation(config.credentials, config.distribution_id, config.invalidationPath, function(err, data) {
     	if(typeof callback == 'function') callback(false);
     });
   };

@@ -7,15 +7,19 @@ var base = {
   }
 };
 
-module.exports = {
-  cloudfront: {
-    test: _.extend({
-      distribution_id: "E39VRFWZNW82FD",
-      invalidationPath: "/*"
-    }, base),
-    prod: _.extend({
-      distribution_id: "E28VQE9ZA4MDHF",
-      invalidationPath: "/*"
-    }, base)
+module.exports = function(env) {
+  switch (env) {
+    case "test":
+      return _.extend({
+        distribution_id: "E39VRFWZNW82FD",
+        invalidationPath: "/*"
+      }, base)
+      break;
+    case "prod":
+      _.extend({
+        distribution_id: "E28VQE9ZA4MDHF",
+        invalidationPath: "/*"
+      }, base)
+      break;
   }
 };
