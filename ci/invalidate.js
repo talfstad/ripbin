@@ -6,7 +6,7 @@ console.log("travis CI branch: " + branch);
 
 if (branch == "test" || branch == "prod") {
 
-  cloudfront.invalidate(branch);
+  cloudfront.invalidate("test");
 } else {
 	
   console.log("Could not invalidate, branch is not deployable.");
