@@ -1,0 +1,14 @@
+{
+  "name": "ajax-ripbin",
+  "version": "1.0.0",
+  "authors": [
+    "Buildcave, LLC"
+  ],
+  "homepage": "ajax.ripbin.com",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "almond": "^0.3.2"
+  }
+}
